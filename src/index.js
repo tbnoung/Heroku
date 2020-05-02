@@ -6,6 +6,10 @@ const port = process.env.PORT || 3000
 
 app.use(express.json())
 
+app.get('', (req, res) => {
+    res.send('Welcome to node with mongoDB')
+})
+
 app.post('/user', (req, res) => {
     const user = new User(req.body)
     user.save().then(() => {
